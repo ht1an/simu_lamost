@@ -83,7 +83,9 @@ int main() {
                 sra = (rnd(generator)*(108000-os_tdp)+cra-108000)/3600;
                 double osra = fmod(sra+3600,360);
 //                cout<<" simulated ra is  "<<sra<<" also "<<osra<<endl;
-                double res_time = (cra-sra*3600)/15 + 7200;
+                double res_time1 = (cra-sra*3600)/15 + 7200;
+                double res_time2 = endobs_time-tmp_time;
+                double res_time = min(res_time1, res_time2);
                 Nobs = round((res_time - T_guiding - T_exp)/(T_exp + T_2exp) + 1);
                 double fobt = T_guiding+T_exp+(Nobs-1)*(T_exp+T_2exp);
                 Tobstime = min(res_time,fobt);
@@ -99,8 +101,11 @@ int main() {
             {
                 sra = fmod((rnd(generator)*(108000-os_fdp)+cra-108000)/3600+360,360);
                 double osra = fmod(sra+360,360);
-                Nobs = 3;
-                Tobstime = T_guiding + T_exp + T_2exp + T_exp + T_2exp + T_exp;
+                double res_time1 = obstime_plate;
+                double res_time2 = endobs_time-tmp_time;
+                double Tobstime = min(res_time1, res_time2);
+                Nobs = floor(Tobstime-T_guiding-T_exp)/(T_2exp+T_exp)+1;
+//                Tobstime = T_guiding + T_exp + T_2exp + T_exp + T_2exp + T_exp;
                 output<<setprecision(10)<<osra<<"    "\
                   <<setprecision(10)<<sdec<<"    "\
                   <<sobs_date<<"    "\

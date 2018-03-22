@@ -118,6 +118,9 @@ int main() {
 
         }
 
+        
+
+
 //        while (endobs_time-tmp_time > obstime_plate/2)
 //        {
 //            stringstream ohh,omm,oss;

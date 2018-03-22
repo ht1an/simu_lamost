@@ -47,5 +47,9 @@ const int speed_endobs_time = 40; // shift speed for ending time in second per d
 // magnitude range
 const float min_mag = 9;
 const float max_mag = 15;
-
+// obs ra ranges for field plate and Time-Dominated plate
+// the minimum ra is the cra - 2h which will not be changed
+// the maximum ra listed here below
+const int64_t os_fdp = 0;    // offset field plate
+const int64_t os_tdp = 3600; // offset TD plate in second
 #endif //SIM_LAMOST_CONSTANT_H

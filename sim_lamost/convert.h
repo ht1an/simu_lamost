@@ -11,4 +11,5 @@ int calc_nextday(int obs_date);
 int calc_nextday_new(int obs_date);
 int calc_interval_days(int start_date, int end_date);
 int calc_obs_time(int obs_date);
+
 #endif //SIM_LAMOST_CONVERT_H

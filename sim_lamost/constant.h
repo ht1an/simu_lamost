@@ -10,7 +10,7 @@
 #define SIM_LAMOST_CONSTANT_H
 
 // fraction of the plates for Time-Dominating observation
-const double f_td = 0.5;
+const double f_td = 1.0;
 
 // starting/ending (included) date of the observation in format yyyymmdd
 // for example 20180923 means 23rd September 2018
@@ -25,8 +25,6 @@ const int T_exp = 1200;          // time for exposure in second
 const double deg2rad = M_PI/180;
 const double rad2deg = 180/M_PI;
 
-const int min_dec = -36000;
-const int max_dec = 216000;
 
 // days for each month
 const int days[12]={31,28,31,30,31,30,31,31,30,31,30,31};
@@ -50,6 +48,10 @@ const float max_mag = 15;
 // obs ra ranges for field plate and Time-Dominated plate
 // the minimum ra is the cra - 2h which will not be changed
 // the maximum ra listed here below
+
+const int min_dec = -36000;
+const int max_dec = 216000;
+
 const int64_t os_fdp = 0;    // offset field plate
-const int64_t os_tdp = 3600; // offset TD plate in second
+const int64_t os_tdp = 54000; // offset TD plate in arcsecond
 #endif //SIM_LAMOST_CONSTANT_H

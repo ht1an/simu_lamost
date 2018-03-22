@@ -25,7 +25,6 @@ const int T_exp = 1200;          // time for exposure in second
 const double deg2rad = M_PI/180;
 const double rad2deg = 180/M_PI;
 
-
 // days for each month
 const int days[12]={31,28,31,30,31,30,31,31,30,31,30,31};
 const int days4[12]={31,29,31,30,31,30,31,31,30,31,30,31};

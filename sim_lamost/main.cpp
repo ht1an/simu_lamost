@@ -114,35 +114,7 @@ int main() {
                   <<"     "<<"FDP"<<endl;
                 tmp_time = tmp_time + Tobstime;
             }
-
-
         }
-
-        
-
-
-//        while (endobs_time-tmp_time > obstime_plate/2)
-//        {
-//            stringstream ohh,omm,oss;
-//            ohh<<setw(2)<<setfill('0')<<floor(double(tmp_time)/3600);
-//            omm<<setw(2)<<setfill('0')<<floor(double((tmp_time%3600)/60));
-//            oss<<setw(2)<<setfill('0')<< tmp_time % 60;
-//            string sobs_time = ohh.str()+omm.str()+oss.str();
-//            float cra = calc_time_cdec(obs_date,tmp_time); // in arcsecond
-//            // range for coordinate selection is cdec-2hour to cra
-//            float min_cra = cra-108000;
-//            double rnd_ra = (cra-rnd(generator)*108000)/3600+360;   // convert to degree
-//            int tmp_rnd_ra = int(floor(rnd_ra));
-//            double res_rnd_ra = rnd_ra-tmp_rnd_ra;
-//            rnd_ra = ((tmp_rnd_ra)+360) % 360;
-//            double rnd_dec = rnd(generator)*(max_dec-min_dec)/3600-10;   // convert to degree
-//            output<<setprecision(10)<<rnd_ra+res_rnd_ra<<"    "\
-//                  <<setprecision(10)<<rnd_dec<<"    "\
-//                  <<sobs_date<<"    "\
-//                  <<sobs_time<<"    "\
-//                  <<s_exptime<<"    "<<3<<endl;
-//            tmp_time = tmp_time+obstime_plate;
-//        }
         obs_date = calc_nextday(obs_date);
     }
     output.close();
